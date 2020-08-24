@@ -78,7 +78,7 @@ class AsciiImage {
             if ((index + 1) % width === 0) {
                 asciiCorrespondent += "\n";
             }
-            asciiImage += asciiCorrespondent + " ";
+            asciiImage += asciiCorrespondent+" ";
         });
         return asciiImage;
     }
