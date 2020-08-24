@@ -13,7 +13,7 @@ function App() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     const file = fileRef.current.files[0];
-    if(!file || width<100 || width>500){
+    if (!file || width < 100 || width > 500) {
       return
     }
     let reader = new FileReader();
@@ -55,9 +55,9 @@ function App() {
           </form>
           :
           <div className="result-div">
-            <button className="back-btn" onClick={()=>{setAsciiImage('');setFilename('');}}>Back</button>
+            <button className="back-btn" onClick={() => { setAsciiImage(''); setFilename(''); }}>Back</button>
             <div className="pre-wrapper">
-              <pre style={{fontSize:getFontSize(parseInt(width))}}>{asciiImage}</pre>
+              <pre style={{ fontSize: getFontSize(parseInt(width)) }}>{asciiImage}</pre>
             </div>
           </div>
         }
@@ -68,12 +68,18 @@ function App() {
 }
 
 
-const getFontSize=(width)=>{
-  if(width<=500 && width >400){
+const getFontSize = (width) => {
+  if (width <= 500 && width > 400) {
     return '2px';
   }
-  else{
-    return '.5rem';
+  if(width<=400 && width >300){
+    return '2.5px';
+  }
+  if(width<=300 && width >200){
+    return '3.3px';
+  }
+  else {
+    return '10px';
   }
 }
 

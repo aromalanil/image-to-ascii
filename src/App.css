@@ -122,16 +122,21 @@ body{
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow-x: scroll;
       overflow-y: scroll;
+      scrollbar-width: none;
   }
 
   pre{
-      margin-top:25rem;
       font-family: monospace;
       font-size:2px;
+      overflow-x: scroll;
+      overflow-y: scroll;
+      scrollbar-width: none;
+      
   }
-
+pre::-webkit-scrollbar {
+    width: 0;
+  }
 
   @media screen and (max-width:500px){
     .body{
