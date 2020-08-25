@@ -34,6 +34,14 @@ function App() {
     }
   }
 
+  const handleWidthChange = e => {
+    const regex = /^[0-9\b]+$/;
+
+    if (e.target.value === '' || regex.test(e.target.value)) {
+       setWidth(e.target.value)
+    }
+  };
+
   return (
     <>
       <NavBar />
@@ -48,7 +56,7 @@ function App() {
               <input type="file" ref={fileRef} accept="image/*" onChange={handleFileInputChange} />
             </div>
             <label align="center" className="width-label">Maximum Width (100-500)<br />
-              <input type="text" value={width} onChange={e => setWidth(e.target.value)} />
+              <input type="text" value={width} onChange={handleWidthChange} />
             </label>
 
             <button type="submit" className="submit">Submit</button>
@@ -57,7 +65,7 @@ function App() {
           <div className="result-div">
             <button className="back-btn" onClick={() => { setAsciiImage(''); setFilename(''); }}>Back</button>
             <div className="pre-wrapper">
-              <pre style={{ fontSize: getFontSize(parseInt(width)) }}>{asciiImage}</pre>
+              <pre align="center" style={{ fontSize: getFontSize(parseInt(width)) }}>{asciiImage}</pre>
             </div>
           </div>
         }
@@ -72,10 +80,10 @@ const getFontSize = (width) => {
   if (width <= 500 && width > 400) {
     return '2px';
   }
-  if(width<=400 && width >300){
+  if (width <= 400 && width > 300) {
     return '2.5px';
   }
-  if(width<=300 && width >200){
+  if (width <= 300 && width > 200) {
     return '3.3px';
   }
   else {

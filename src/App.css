@@ -119,9 +119,6 @@ body{
       color:black;
       padding:1rem 1rem;
       border: 5px solid #353D58;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       overflow-y: scroll;
       scrollbar-width: none;
   }
@@ -132,7 +129,6 @@ body{
       overflow-x: scroll;
       overflow-y: scroll;
       scrollbar-width: none;
-      
   }
 pre::-webkit-scrollbar {
     width: 0;
